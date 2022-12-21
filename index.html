@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Sweet-Tweet</title>
+    <link rel="stylesheet" href="style.css" />
+    <script
+      src="https://kit.fontawesome.com/4ceabe38a1.js"
+      crossorigin="anonymous"
+    ></script>
+  </head>
+  <body>
+    <div class="main">
+      <!-- URL SECTION -->
+
+      <div class="url">
+        <input type="text" placeholder="enter your tweet link here" />
+      <i class="fa-solid fa-circle-down download-btn" id="download"></i>
+      </div>
+      <!-- CONTENT SECTION -->
+      <img class="mainPat"></img>
+      <div class="mainSec">
+        <div class="profile_info">
+          <img
+            class="profile_picture"
+            src="res/profile-photo.png"
+            alt=""
+          />
+          <div class="user_details">
+            <div class="name">Sagnik Mukherjee</div>
+            <div class="username">@technotrove</div>
+          </div>
+        </div>
+
+        <div class="tweet_section">
+          <div class="tweet">why coders are so serious ?</div>
+        </div>
+
+        <div class="timendate">17, Feb 2003 - 10:00 AM</div>
+
+        <div class="reactions">
+          <div class="comments"><i class="fa-solid fa-comment"></i>1.1K</div>
+          <div class="retweet"><i class="fa-solid fa-retweet"></i>5.2K</div>
+          <div class="likes"><i class="fa-solid fa-heart"></i>10.2K</div>
+        </div>
+      </div>
+      <!-- EDITING SECTION -->
+
+      <div class="editing_sec">
+        <div class="ed_btns">
+          <!-- BACKGROUND TOGGLE BUTTON -->
+          <div class="bg-gr-switch-btn ed_btn"></div>
+          <!-- TWEET THEME TOGGLE BUTTON -->
+          <div
+            class="tweet_theme_btn ed_btn"
+            onclick="toggleTweetTheme();"
+          ></div>
+          <!-- REACTION TOGGLE BUTTON -->
+          <div class="reaction_btn ed_btn" onclick="toggleReaction()"></div>
+          <!-- FONT TOGGLE BUTTON  -->
+          <div class="font_btn ed_btn" onclick="toggleFont()"></div>
+          <div class="pattern_btn ed_btn" onclick="changePattern();rotatePatBtn();"></div>
+          <div class="ratio_btn ed_btn" onclick="toggleRatio();">1:1</div>
+        </div>
+
+        <!-- BACKGROUND GRADIENT -->
+
+        <div class="bg-gradient">
+          <!-- Background Gradient List -->
+          <div class="br-gr-list">
+            <span
+              class="color-btns"
+              data-color="#999"
+              style="
+                background-image: linear-gradient(to right, #ff930f, #fff95b);
+              "
+            ></span>
+            <span
+              class="color-btns"
+              data-color="#888"
+              style="
+                background-image: linear-gradient(to right, #ff0f7b, #f89b29);
+              "
+            ></span>
+            <span
+              class="color-btns"
+              data-color="#999"
+              style="
+                background-image: linear-gradient(to right, #30c5d2, #471069);
+              "
+            ></span>
+            <span
+              class="color-btns"
+              data-color="#999"
+              style="
+                background-image: linear-gradient(to right, #243748, #4b749f);
+              "
+            ></span>
+            <span
+              class="color-btns"
+              data-color="#999"
+              style="
+                background-image: linear-gradient(to right, #dd5e89, #f7bb97);
+              "
+            ></span>
+            <span
+              class="color-btns"
+              data-color="#999"
+              style="
+                background-image: linear-gradient(to right, #56ab2f, #a8e063);
+              "
+            ></span>
+            <span
+              class="color-btns"
+              data-color="#999"
+              style="
+                background-image: linear-gradient(to right, #614385, #516395);
+              "
+            ></span>
+            <span
+              class="color-btns"
+              data-color="#999"
+              style="
+                background-image: linear-gradient(to right, #2af598, #009efd);
+              "
+            ></span>
+            <span
+              class="color-btns"
+              data-color="#999"
+              style="
+                background-image: linear-gradient(to right, #6a11cb, #2575fc);
+              "
+            ></span>
+            <span
+              class="color-btns"
+              data-color="#999"
+              style="
+                background-image: linear-gradient(to right, #c471f5, #fa71cd);
+              "
+            ></span>
+            <span
+              class="color-btns"
+              data-color="#999"
+              style="
+                background-image: linear-gradient(to right, #e14fad, #f9d423);
+              "
+            ></span>
+            <span
+              class="color-btns"
+              data-color="#999"
+              style="
+                background-image: linear-gradient(to right, #89f7fe, #66a6ff);
+              "
+            ></span>
+          </div>
+        </div>
+      </div>
+
+    </div>
+    <script src="dom-to-image.js"></script>
+    <script src="script.js"></script>
+    <script>
+      var image = document.getElementsByClassName("main")[0];
+      var download_button = document.getElementById("download");
+      download_button.addEventListener("click", function() {
+        domtoimage.toJpeg(image).then((data)=>{
+          var link = document.createElement("a");
+          link.download = "myticket.jpg";
+          link.href = data;
+          link.click();
+        })
+      });
+    </script>
+  </body>
+</html>

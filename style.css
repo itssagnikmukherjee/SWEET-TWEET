@@ -1,0 +1,313 @@
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans&family=Jost:ital,wght@1,300&family=Poppins&display=swap&family=Nunito:wght@600&display=swapfamily=Lora&display=swap');
+
+
+:root{
+    --bg-color: linear-gradient(to right, #ff930f,#fff95b);
+    --tweet-bg-color-light: linear-gradient(to left, #f5f7fab6,#dfcdcd9d);
+    --tweet-bg-color-dark: linear-gradient(to left, #242424a6,#101010db);
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    height: 100vh;
+    width: 100vw;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-image: url("res/bg.jpg");
+    background-size: 300px 300px;
+}
+.main{
+    margin-top: 1.5%;
+    display: flex;
+    height: 60vh;
+    width: 60vh;
+    align-items: center;
+    justify-content: center;
+    background-image: var(--bg-color);
+    overflow: hidden;
+    user-select: none;
+}
+.mainPat{
+    height: 150%;
+    width: 150%;
+    opacity: .1;
+    background-image: url('patterns/2.svg');
+}
+
+.mainSec{
+    background-image: var(--tweet-bg-color-light);
+    border-radius: 1.5vw;
+    box-shadow: 0px 40px 40px rgba(0, 0, 0, 0.198);
+    padding: 2vw;
+    z-index: 5;
+    position: absolute;
+}
+.main.ratio-toggle{
+    height: 60vh;
+    width: 80vh;
+}
+.main.ratio-toggle .name{
+    font-size: 1.2vw;
+}
+.main.ratio-toggle .username{
+    font-size: .9vw;
+}
+.main.ratio-toggle .profile_picture{
+    height: 3.5vw;
+    width: 3.5vw;
+}
+
+.main.ratio-toggle .tweet{
+font-size: 1.7vw;
+}
+
+.main.ratio-toggle .timendate{
+    font-size:.9vw;
+}
+
+.main.ratio-toggle .reactions{
+font-size: 1.2vw;
+}
+
+.main.ratio-toggle .editing_sec{
+    width: 37.3vw;
+}
+.main.ratio-toggle .url >input{
+    width: 37.3vw;
+}
+.main.ratio-toggle .tweet.tweet-font-toggle{
+    font-size: 2.1vw;
+}
+.mainSec.theme-toggle{
+    background-image: var(--tweet-bg-color-dark);
+    box-shadow: 0px 40px 40px rgba(0, 0, 0, 0.4);
+}
+.mainSec.theme-toggle .name{
+    color: rgba(255, 255, 255, 0.7);
+}
+.mainSec.theme-toggle .username{
+    color: rgba(255, 255, 255, 0.4);
+}
+.mainSec.theme-toggle .tweet{
+color: rgba(255, 255, 255, 0.9);
+}
+.mainSec.theme-toggle .timendate{
+    color: rgba(255, 255, 255, 0.4);
+}
+.mainSec.theme-toggle .reactions{
+    color: rgba(255, 255, 255, 0.537);
+}
+
+
+
+.profile_info{
+    display: flex;
+    align-items: center;
+}
+.profile_picture{
+    height: 3vw;
+    width: 3vw;
+    margin-right: .8vw;
+}
+
+.name{
+    font-family: 'Josefin Sans', sans-serif;
+    font-size: 1vw;
+    color: rgba(54, 54, 54, 0.938);
+}
+.username{
+    font-size: .8vw;
+    font-family: 'Jost', sans-serif;
+    color: rgba(54, 54, 54, 0.938);
+}
+.tweet_section{
+    margin-top: 1vw;
+}
+.tweet{
+    font-size: 1.5vw;
+    margin: 0.9vw;
+    font-family: 'Poppins', sans-serif;
+    color: rgba(42, 42, 42, 0.938);
+}
+.tweet.tweet-font-toggle{
+    font-family: 'Lora', serif;
+    font-size: 1.82vw;
+    letter-spacing: .3px;
+}
+.reactions{
+    display: flex;
+    justify-content: space-between;
+    width: 80%;
+    margin: auto;
+    font-size: 1.1vw;
+    font-family: 'Josefin Sans', sans-serif;
+    color: rgba(27, 27, 27, 0.786);
+
+}
+.fa-solid{
+    margin: 1vw;  
+}
+.timendate{
+    font-family: 'Jost', sans-serif;
+    margin: 0.9vw;
+    font-size: .8vw;
+    color: rgba(54, 54, 54, 0.938);
+}
+.url{
+    position: absolute;
+    bottom: 10%;
+    z-index: 555;
+}
+.url > input {
+    height: 4vw;
+    width: 28vw;
+    font-size: 1.2vw;
+    text-align: center;
+    padding: .5vw;
+    border: none;
+    border-radius: 0vw 0vw 2vw 2vw;
+    font-family: 'Nunito', sans-serif;
+    color: rgb(86, 86, 86);
+    background-color: #ffffffda;
+}
+
+.url > input:focus{
+   outline: none;
+}
+.url > i{
+    position: absolute;
+    right: 0;
+    margin: .5vw;
+    font-size: 3vw;
+    cursor: pointer;
+    color: orange;
+}
+.editing_sec{
+    background-color: rgba(255, 255, 255, 0.722);
+    height: 12%;
+    width: 28%;
+    position: absolute;
+    top: 9.7%;
+    border-radius: 1.5vw 1.5vw 0vw 0vw;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.bg-gr-switch-btn{
+    cursor: pointer;
+    font-size: 2vw;
+    background-image: var(--bg-color);
+    height: 3.5vw;
+    width: 3.5vw;
+    border-radius: 50%;
+    outline:4px solid rgb(238, 238, 238);
+}
+
+
+.br-gr-list{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    width: 45%;
+    position: absolute;
+    background-color: rgba(255, 255, 255, 0.804);
+    padding: .5vw;
+    border-radius: 1vw;
+    left: -50%;
+    display: none;
+}
+
+
+.br-gr-list.active{
+    display: flex;
+    z-index: 5;
+
+}
+
+.br-gr-list > .color-btns{
+    display: inline-block;
+    height: 50px;
+    width: 50px;
+    margin: .5vw;
+    cursor: pointer;
+    border-radius: 50%;
+    
+}
+.br-gr-list > .color-btns:hover{
+    border: 5px solid rgb(224, 224, 224);
+    transition: 0.1s;
+}
+.br-gr-list > .color-btns:active{
+    border: 5px solid rgb(224, 224, 224);
+    transition: 0.1s;
+}
+
+.tweet_theme_btn{ 
+    background-color: rgba(150, 150, 200, 0.797);
+    background-image: url("res/sun.svg");
+}
+.tweet_theme_btn.theme-toggle-btn{
+    background-image: url("res/moon.svg");
+}
+
+.ed_btns{
+    display: flex;
+    justify-content: justify;
+    align-items: center;
+}
+.ed_btn{
+    margin: 6px;
+    height: 3.5vw;
+    width: 3.5vw;
+    background-color: rgba(110, 51, 237, 0.631);
+    border-radius: 50%;
+    outline: 4px solid rgba(224, 224, 224, 0.394);
+    cursor: pointer;
+    display: flex;
+    background-position: center;
+    background-repeat: no-repeat;
+    justify-content: center;
+    align-items: center;
+    color: white;
+}
+
+.reaction_btn{
+    background-color: rgba(201, 96, 210, 0.797);
+    background-image: url("res/reactionon.svg");
+}
+
+.reaction_btn.reaction-toggle-btn{
+    background-image: url("res/reactionoff.svg");
+}
+
+.reactions.reaction-toggle{
+    display: none;
+}
+
+.font_btn{
+    background-color: rgba(110, 51, 237, 0.631);
+    background-image: url("res/sans.svg");
+}
+.font_btn.font-toggle{
+    font-family: Poppins;
+    background-image: url("res/serif.svg");
+
+}
+.ratio_btn{
+    background-color: rgba(110, 51, 237, 0.631);
+    user-select: none;
+    font-size: 1.3vw;
+    font-family: poppins;
+    letter-spacing: 2px;
+}
+.pattern_btn{
+    background-color: rgba(237, 51, 63, 0.631);
+    background-image: url("res/dice.svg");
+}
